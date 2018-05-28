@@ -9,7 +9,7 @@ module.exports = merge(common, {
     port: 3001,
     compress: true,
     historyApiFallback: true,
-    contentBase: './dist',
+    contentBase: './assets',
   },
   plugins: [
     new webpack.DefinePlugin({

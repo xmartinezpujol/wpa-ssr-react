@@ -12,15 +12,10 @@
     "no-return-assign": 0,
     "prefer-promise-reject-errors": 0,
     "import/no-extraneous-dependencies": 0,
-    "no-plusplus": 0
+    "no-plusplus": 0,
+    "function-paren-newline": 0
   },
   "globals": {
     "window": true
-  },
-  "plugins": [
-    "cypress"
-  ],
-  "env": {
-    "cypress/globals": true
   }
 }

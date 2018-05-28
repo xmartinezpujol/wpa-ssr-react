@@ -8,7 +8,7 @@ class App extends React.Component {
   }
 
   render() {
-    return(
+    return (
       <Button template="default">Hello React App!</Button>
     );
   }
