@@ -1,6 +1,9 @@
 import React from 'react';
 
-import Button from './components/Button';
+import Gallery from './containers/Gallery';
+
+// Mocking the images
+import Photos from './mocks/photos';
 
 class App extends React.Component {
   constructor(props) {
@@ -9,7 +12,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <Button template="default">Hello React App!</Button>
+      <Gallery images={Photos.oriental.photos} />
     );
   }
 }

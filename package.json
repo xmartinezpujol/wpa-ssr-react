@@ -73,7 +73,7 @@
     "build:watch:client": "webpack --config webpack.config.js --watch",
     "build:prod": "npm run build && npm run build:client",
     "test": "jest --env=jsdom --coverage",
-    "storybook": "start-storybook -p 6006 -s ./public",
+    "storybook": "start-storybook -p 6006 -s ./assets",
     "build-storybook": "build-storybook",
     "test:output": "jest --json --outputFile=.jest-test-results.json",
     "teste2e": "cypress open",

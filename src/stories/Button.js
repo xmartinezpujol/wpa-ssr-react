@@ -35,7 +35,7 @@ storiesOf('Button', module)
     const template = select(label, optionsTemplate, defaultTeamplate);
     const borderColor = select(label2, optionsBorder, defaultborderColor);
 
-    return(
+    return (
       <Button
         border={boolean('Border', true)}
         color={borderColor}
@@ -64,7 +64,7 @@ storiesOf('Button', module)
     return(
       <Button
         iFont={text('Icon Font', 'fa')}
-        icon={text('Icon name', 'toggle-off')}
+        icon={text('Icon name', 'bomb')}
         iconSize={number('Icon fontSize', 22)}
         iconWidth={number('Icon width (for paddings)', 40)}
         border={boolean('Border', true)}
@@ -91,7 +91,7 @@ storiesOf('Button', module)
     const template = select(label, optionsTemplate, defaultTeamplate);
     const borderColor = select(label2, optionsBorder, defaultborderColor);
 
-    return(
+    return (
       <Button
         iFont={text('Icon Font', 'fa')}
         icon={text('Icon name (FA)', 'comment')}
