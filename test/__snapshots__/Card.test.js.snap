@@ -1,21 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button renders correctly 1`] = `
+exports[`Card renders correctly 1`] = `
 initialize {
   "0": Object {
     "attribs": Object {
-      "class": "css-h6xwm6",
+      "class": "css-x2sux9",
+      "style": "padding:0",
     },
     "children": Array [
       Object {
-        "data": "Button",
+        "attribs": Object {
+          "class": "css-5bdn82",
+          "style": "margin:0;padding:0;background-size:cover;border-radius:5px",
+        },
+        "children": Array [],
+        "name": "div",
+        "namespace": "http://www.w3.org/1999/xhtml",
         "next": null,
         "parent": [Circular],
         "prev": null,
-        "type": "text",
+        "type": "tag",
+        "x-attribsNamespace": Object {
+          "class": undefined,
+          "style": undefined,
+        },
+        "x-attribsPrefix": Object {
+          "class": undefined,
+          "style": undefined,
+        },
       },
     ],
-    "name": "button",
+    "name": "div",
     "namespace": "http://www.w3.org/1999/xhtml",
     "next": null,
     "parent": null,
@@ -37,9 +52,11 @@ initialize {
     "type": "tag",
     "x-attribsNamespace": Object {
       "class": undefined,
+      "style": undefined,
     },
     "x-attribsPrefix": Object {
       "class": undefined,
+      "style": undefined,
     },
   },
   "_root": [Circular],

@@ -23,9 +23,20 @@ describe('Button', () => {
     wrapper.setProps({ fullWidth: true });
     expect(wrapper.render()).toHaveStyleRule('min-width', '100%');
   });
-  it('Button has no theme, should be default', () => {
+  it('has no theme, should be default', () => {
     wrapper.setProps({ theme: false });
     expect(wrapper.render()).toHaveStyleRule('border', '0');
     expect(wrapper.render()).toHaveStyleRule('color', 'white');
+  });
+  it('has icon, should render icon font classes', () => {
+    wrapper.setProps({
+      theme: false,
+      iconWeight: 700,
+      iconSize: 22,
+      iconWidth: 20,
+      iFont: 'fa',
+      icon: 'bomb',
+    });
+    expect(wrapper.find('.fa').hasClass('fa-bomb'));
   });
 });

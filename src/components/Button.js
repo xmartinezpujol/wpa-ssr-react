@@ -27,12 +27,7 @@ const size = {
 const template = (props) => {
   const templateRemake = {
     default: {
-      background: props.type ? COLOR_PALETTE[props.type] : COLOR_PALETTE.business,
-      border: 0,
-      color: 'white',
-    },
-    login: {
-      background: COLOR_PALETTE.grad_social,
+      background: props.type ? COLOR_PALETTE[props.type] : COLOR_PALETTE.red,
       border: 0,
       color: 'white',
     },
@@ -40,10 +35,10 @@ const template = (props) => {
       backgroundColor: 'white',
       border: '2px solid',
       borderColor: COLOR_PALETTE[props.bordercolor],
-      color: props.bordercolor ? COLOR_PALETTE[props.bordercolor] : COLOR_PALETTE.black,
+      color: props.bordercolor ? COLOR_PALETTE[props.bordercolor] : COLOR_PALETTE.night,
       ':hover:enabled': {
         background: (props.bordercolor === 'black' || !props.bordercolor) ?
-          COLOR_PALETTE.grad_neutral : 'white',
+          COLOR_PALETTE.night : 'white',
         color: (props.bordercolor === 'black' || !props.bordercolor) ?
           'white' : props.bordercolor,
       },
@@ -51,7 +46,7 @@ const template = (props) => {
     link: {
       backgroundColor: 'transparent',
       border: 0,
-      color: props.bordercolor ? COLOR_PALETTE[props.bordercolor] : COLOR_PALETTE.black,
+      color: props.bordercolor ? COLOR_PALETTE[props.bordercolor] : COLOR_PALETTE.night,
       ':hover:enabled': {
         boxShadow: 'none',
         color: props.bordercolor ?
@@ -72,12 +67,14 @@ const template = (props) => {
 
 const Icon = glamorous.i(
   {
+    fontSize: 22,
+    fontWeight: 300,
     display: 'flex',
   },
   props => ({
-    fontSize: props.iconSize ? props.iconSize : 22,
-    width: props.iconWidth ? props.iconWidth : 'auto',
-    fontWeight: props.iconBold ? '700 !important' : 300,
+    fontSize: props.iconSize,
+    width: props.iconWidth,
+    fontWeight: props.iconWeight,
   }),
 );
 
@@ -122,7 +119,7 @@ const Button = props => (
   <ButtonBox {...props} >
     {props.icon &&
     <Icon
-      iconBold={props.iconBold}
+      iconWeight={props.iconWeight}
       iconSize={props.iconSize}
       iconWidth={props.iconWidth}
       className={`${props.iFont} ${props.iFont}-${props.icon}`}

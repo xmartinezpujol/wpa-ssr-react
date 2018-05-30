@@ -1,21 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button renders correctly 1`] = `
+exports[`View View renders correctly 1`] = `
 initialize {
   "0": Object {
     "attribs": Object {
-      "class": "css-h6xwm6",
+      "class": "css-1ysjyam",
     },
     "children": Array [
       Object {
-        "data": "Button",
+        "data": "I'm just some text inside a viewport",
         "next": null,
         "parent": [Circular],
         "prev": null,
         "type": "text",
       },
     ],
-    "name": "button",
+    "name": "div",
     "namespace": "http://www.w3.org/1999/xhtml",
     "next": null,
     "parent": null,

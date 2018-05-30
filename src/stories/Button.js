@@ -61,7 +61,7 @@ storiesOf('Button', module)
     const template = select(label, optionsTemplate, defaultTeamplate);
     const borderColor = select(label2, optionsBorder, defaultborderColor);
 
-    return(
+    return (
       <Button
         iFont={text('Icon Font', 'fa')}
         icon={text('Icon name', 'bomb')}
@@ -107,7 +107,6 @@ storiesOf('Button', module)
         template={template}
         onClick={action('clicked')}
         noanim={boolean('No Animation', false)}
-      >
-      </Button>
+      />
     );
   });

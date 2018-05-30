@@ -84,7 +84,7 @@
       ".*": "./node_modules/babel-jest"
     },
     "setupFiles": [
-      "./test/jestsetup.js"
+      "./jestsetup.js"
     ]
   },
   "eslintConfig": {

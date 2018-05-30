@@ -44,7 +44,7 @@ const CardContainer = glamorous.div(
     '@media(max-width: 768px)': {
       minWidth: props.dimensions.xs.w,
       maxWidth: props.dimensions.xs.w,
-      margin: '10px 0',
+      margin: '10px auto',
     },
   }),
 );
@@ -95,16 +95,18 @@ const Card = props => (
     height={props.height}
     clickable={props.clickable}
     color={props.color}
+    style={props.styleCont}
   >
     {props.cover &&
-    <Image
-      url={props.cover}
-      zoom={props.zoom}
-      imgHeight={props.imgHeight}
-    />
+      <Image
+        url={props.cover}
+        zoom={props.zoom}
+        imgHeight={props.imgHeight}
+        style={props.style}
+      />
     }
     {!props.cover &&
-    <Background color={props.color} />
+      <Background color={props.color} style={props.style} />
     }
     {props.children}
   </CardContainer>
