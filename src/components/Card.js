@@ -75,7 +75,7 @@ const Image = glamorous.div(
     height: props.imgHeight.lg,
     backgroundImage: `url(${props.url})`,
     ':hover': {
-      backgroundSize: props.zoom ? '150%' : '100%',
+      backgroundSize: props.zoom ? '120%' : '100%',
     },
     '@media(max-width: 1200px)': {
       height: props.imgHeight.md,
@@ -96,6 +96,7 @@ const Card = props => (
     clickable={props.clickable}
     color={props.color}
     style={props.styleCont}
+    onClick={props.onSelection}
   >
     {props.cover &&
       <Image

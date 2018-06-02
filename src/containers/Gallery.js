@@ -1,43 +1,48 @@
 import React from 'react';
-import glamorous from 'glamorous';
 import InfiniteScroll from 'react-infinite-scroller';
 
 import Card from '../components/Card';
 import Text from '../components/Text';
-import View from '../components/View';
 
 class Gallery extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       hasMoreCards: true,
-      maxPage: Math.round(this.props.images.length / 3),
-      curPage: 0,
     };
     this.handleSelection = this.handleSelection.bind(this);
     this.loadCards = this.loadCards.bind(this);
     this.shouldPageLoad = this.shouldPageLoad.bind(this);
+    this.imageURL = this.imageURL.bind(this);
   }
 
-  handleSelection() {
+  componentWillReceiveProps(newProps) {
+    if (newProps.images !== this.props.images) {
 
+    }
+  }
+
+  handleSelection(id) {
+    alert(`Selected Card ${id}`);
   }
 
   loadCards(page) {
     if (this.shouldPageLoad(page)) {
-      this.setState(() => ({
-        curPage: this.state.curPage + 1,
-      }));
+      this.props.onLoadPhotos();
     }
   }
 
   shouldPageLoad(page) {
-    if (page === this.state.maxPage) {
+    if (page === this.props.pages) {
       this.setState(() => ({
         hasMoreCards: false,
       }), () => false);
     }
     return true;
+  }
+
+  imageURL(img) {
+    return `http://farm${img.farm}.staticflickr.com/${img.server}/${img.id}_${img.secret}.jpg`;
   }
 
   render() {
@@ -54,35 +59,52 @@ class Gallery extends React.Component {
       lg: 165,
     };
     return (
-      <View container justify="flex-start" style={{ flexFlow: 'row wrap' }}>
+      <React.Fragment>
+        <Text type="h1">
+          <span style={{ padding: '0 10px' }} role="img" aria-label="gallery">🎨</span>
+          Flickr Interesting Photos
+        </Text>
         {this.props.images && this.props.images.length > 0 &&
           <InfiniteScroll
             pageStart={0}
-            loadMore={() => this.loadCards(this.state.curPage)}
+            loadMore={this.loadCards}
             hasMore={this.state.hasMoreCards}
             loader={<div className="loader" key={0}>Loading ...</div>}
           >
-            {this.props.images.slice(0, this.state.curPage * 3).map(photo => (
-              <Card
-                key={photo.id}
-                cover={`./assets/img/oriental/${photo.img}.jpg`}
-                color="white"
-                onClick={() => this.handleSelection(photo.id)}
-                clickable
-                zoom
-                dimensions={dimensions}
-                imgHeight={imgHeights}
-              >
-                <Text type="h2">{photo.title}</Text>
-                <Text type="p1">{photo.text}</Text>
-              </Card>
-            ))}
+            {this.props.images.map((photo) => {
+              const imgUrl = this.imageURL(photo);
+              return (
+                <Card
+                  key={photo.id}
+                  cover={imgUrl}
+                  color="white"
+                  clickable
+                  zoom
+                  dimensions={dimensions}
+                  imgHeight={imgHeights}
+                  onSelection={() => this.handleSelection(photo.id)}
+                >
+                  <Text
+                    type="h3"
+                    style={{
+                      width: 300,
+                      whiteSpace: 'nowrap',
+                      overflow: 'hidden',
+                      textOverflow: 'ellipsis',
+                    }}
+                  >
+                    {photo.title}
+                  </Text>
+                  <Text type="p1">{photo.text}</Text>
+                </Card>
+              );
+            })}
           </InfiniteScroll>
         }
         {(!this.props.images || this.props.images.length === 0) &&
           <Text type="p1">No images in this gallery :(</Text>
         }
-      </View>
+      </React.Fragment>
     );
   }
 }

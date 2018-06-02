@@ -77,11 +77,6 @@ npm run test
 11) Animations
 12) Responsive/Compatibility check.
 
-* I added React Router for routing to scale this app in the future.
-
-* Storybook is used for component development, following the Component Driven Design (CDD) mindset. Snapshots and UI testing could be added there also. This is a common ground with designers also to improve the companies visual Styleguide and use it as a UI Explorer.
-
-
 ### Considerations
 
 * ESLint + AirnBnB Styleguide is used for code linting.
@@ -94,9 +89,13 @@ npm run test
 
 * Lists should be virtualized, if I had more time I would use collections/masonry from react-virtualized to load images for better performance.
 
-* Bundles could be splitted using Webpacks code-splitter (chunks).
+* Cover error cases, API failed req, Flickr API, etc. Track errors + log + show user info.
+
+* Bundles could be splitted using Webpack's code-splitter (chunks).
 
 * Build process needs a bit more work. Dev environtment could be run also in Docker.
+
+* ARIA
 
 ### Tech Stack
 ReactJS, Redux, Storybook, NodeJS, Express, Webpack4, Jest, Enzyme, Cypress.

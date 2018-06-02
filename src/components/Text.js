@@ -4,14 +4,32 @@ import glamorous from 'glamorous';
 const Text = (props) => {
   const styles = {
     h1: {
-      fontSize: 36,
+      fontSize: 20,
       color: '#36424A',
       fontWeight: 900,
+      '@media(min-width: 768px)': {
+        fontSize: 24,
+      },
+      '@media(min-width: 992px)': {
+        fontSize: 28,
+      },
+      '@media(min-width: 1200px)': {
+        fontSize: 36,
+      },
     },
     'h1.w': {
-      fontSize: 36,
+      fontSize: 20,
       color: '#FFFFFF',
       fontWeight: 900,
+      '@media(min-width: 768px)': {
+        fontSize: 24,
+      },
+      '@media(min-width: 992px)': {
+        fontSize: 28,
+      },
+      '@media(min-width: 1200px)': {
+        fontSize: 36,
+      },
     },
     h2: {
       fontSize: 25,
@@ -34,29 +52,74 @@ const Text = (props) => {
       fontWeight: 900,
     },
     h3: {
-      fontSize: 18,
+      fontSize: 14,
       color: '#36424A',
       fontWeight: 900,
+      '@media(min-width: 768px)': {
+        fontSize: 14,
+      },
+      '@media(min-width: 992px)': {
+        fontSize: 16,
+      },
+      '@media(min-width: 1200px)': {
+        fontSize: 18,
+      },
     },
     'h3.1': {
-      fontSize: 18,
+      fontSize: 14,
       color: '#6E7A83',
       fontWeight: 700,
+      '@media(min-width: 768px)': {
+        fontSize: 14,
+      },
+      '@media(min-width: 992px)': {
+        fontSize: 16,
+      },
+      '@media(min-width: 1200px)': {
+        fontSize: 18,
+      },
     },
     'h3.w': {
-      fontSize: 18,
+      fontSize: 14,
       color: '#FFFFFF',
       fontWeight: 700,
+      '@media(min-width: 768px)': {
+        fontSize: 14,
+      },
+      '@media(min-width: 992px)': {
+        fontSize: 16,
+      },
+      '@media(min-width: 1200px)': {
+        fontSize: 18,
+      },
     },
     h4: {
-      fontSize: 16,
+      fontSize: 10,
       color: '#6E7A83',
       fontWeight: 400,
+      '@media(min-width: 768px)': {
+        fontSize: 12,
+      },
+      '@media(min-width: 992px)': {
+        fontSize: 14,
+      },
+      '@media(min-width: 1200px)': {
+        fontSize: 16,
+      },
     },
     'h4.w': {
-      fontSize: 16,
+      fontSize: 10,
       color: '#FFFFFF',
       fontWeight: 400,
+      '@media(min-width: 768px)': {
+        fontSize: 12,
+      },
+      '@media(min-width: 992px)': {
+        fontSize: 14,
+      },
+      '@media(min-width: 1200px)': {
+        fontSize: 16,
+      },
     },
     h5: {
       fontSize: 11,
