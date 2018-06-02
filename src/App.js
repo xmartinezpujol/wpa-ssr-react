@@ -54,6 +54,9 @@ class App extends React.Component {
         {this.state.images === null &&
           <Text type="p1">Loading</Text>
         }
+        {this.state.images && this.state.images.length === 0 &&
+          <Text type="p1">No images in this gallery :(</Text>
+        }
       </View>
     );
   }

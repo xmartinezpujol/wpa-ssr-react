@@ -20,7 +20,7 @@ npm run api
 
 Run Client (ReactJS App) at http://localhost:3000
 ``` shell
-npm start
+npm run start:dev
 ```
 
 Run Storybook (UI Explorer) at http://localhost:6006

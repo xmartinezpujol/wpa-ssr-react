@@ -101,9 +101,6 @@ class Gallery extends React.Component {
             })}
           </InfiniteScroll>
         }
-        {(!this.props.images || this.props.images.length === 0) &&
-          <Text type="p1">No images in this gallery :(</Text>
-        }
       </React.Fragment>
     );
   }
