@@ -72,7 +72,7 @@ npm run test
 6) Leave routing ready in client/server.
 7) Create a Grid/List, check infinite loading with mocked data.
 8) Add Flickr API to replace mocked data (Node API).
-9) Add Redux/Redux-thunk for fetching data in client.
+9) Add Redux/Redux-thunk for fetching data in client. Check SSR here: https://redux.js.org/recipes/server-rendering
 10) Master - Detail: image detail transition + info.
 11) Animations
 12) Responsive/Compatibility check.
@@ -92,6 +92,8 @@ npm run test
 * Cover error cases, API failed req, Flickr API, etc. Track errors + log + show user info.
 
 * Bundles could be splitted using Webpack's code-splitter (chunks).
+
+* Image loading for the last column, something odd seems to happen when you scroll faster. Also for Image loads I recommend techniques like these ones: https://images.guide/ (blurring, preload, etc)
 
 * Build process needs a bit more work. Dev environtment could be run also in Docker.
 

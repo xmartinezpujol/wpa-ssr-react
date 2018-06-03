@@ -4,9 +4,10 @@ import rootReducer from './modules/reducer';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const configureStore = () => (
+const configureStore = preloadedState => (
   createStore(
     rootReducer,
+    preloadedState,
     composeEnhancers(applyMiddleware(thunk)),
   )
 );

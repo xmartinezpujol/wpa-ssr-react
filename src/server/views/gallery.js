@@ -1,11 +1,23 @@
 import React from 'react';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 
 import { renderStatic } from 'glamor/server';
 import ReactDOMServer from 'react-dom/server';
 
 import App from '../../App';
+import rootReducer from '../../redux/modules/reducer';
 
-const { html, css } = renderStatic(() => ReactDOMServer.renderToString(<App />));
+// Create a new Redux store instance
+const store = createStore(rootReducer);
+
+// Redux initial state
+const preloadedState = store.getState();
+
+const { html, css } = renderStatic(() => ReactDOMServer.renderToString(
+  <Provider store={store}>
+    <App />
+  </Provider>));
 
 export default () => (`
     <html>
@@ -26,6 +38,9 @@ export default () => (`
       </head>
       <body>
         <div id="app">${html}</div>
+        <script>
+          window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\\u003c')}
+        </script>
         <script src="https://cdn.ravenjs.com/3.22.3/raven.min.js" crossorigin="anonymous"></script>
         <script src="/assets/app.bundle.js"></script>
       </body>

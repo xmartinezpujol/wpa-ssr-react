@@ -1,8 +1,25 @@
 import React from 'react';
+import glamorous from 'glamorous';
 import InfiniteScroll from 'react-infinite-scroller';
+import { connect } from 'react-redux';
 
 import Card from '../components/Card';
+import Loader from '../components/Loader';
 import Text from '../components/Text';
+
+import * as galleryActions from '../redux/modules/Gallery/imagesGallery';
+
+const FullWidthWrapper = glamorous.div({
+  position: 'fixed',
+  top: 0,
+  left: 0,
+  zIndex: 100,
+  display: 'flex',
+  width: '100vw',
+  height: '100vh',
+  alignItems: 'center',
+  justifyContent: 'center',
+});
 
 class Gallery extends React.Component {
   constructor(props) {
@@ -16,10 +33,8 @@ class Gallery extends React.Component {
     this.imageURL = this.imageURL.bind(this);
   }
 
-  componentWillReceiveProps(newProps) {
-    if (newProps.images !== this.props.images) {
-
-    }
+  componentDidMount() {
+    this.props.dispatch(galleryActions.loadPhotos(1));
   }
 
   handleSelection(id) {
@@ -28,7 +43,7 @@ class Gallery extends React.Component {
 
   loadCards(page) {
     if (this.shouldPageLoad(page)) {
-      this.props.onLoadPhotos();
+      this.props.dispatch(galleryActions.loadPhotos(page));
     }
   }
 
@@ -58,20 +73,23 @@ class Gallery extends React.Component {
       md: 165,
       lg: 165,
     };
+    const { curPage } = this.state;
+    const { imagesGallery } = this.props;
+    const images = imagesGallery.photos;
     return (
       <React.Fragment>
         <Text type="h1">
           <span style={{ padding: '0 10px' }} role="img" aria-label="gallery">🎨</span>
           Flickr Interesting Photos
         </Text>
-        {this.props.images && this.props.images.length > 0 &&
+        {typeof (images) !== 'undefined' && images.length > 0 &&
           <InfiniteScroll
             pageStart={0}
             loadMore={this.loadCards}
             hasMore={this.state.hasMoreCards}
             loader={<div className="loader" key={0}>Loading ...</div>}
           >
-            {this.props.images.map((photo) => {
+            {images.map((photo) => {
               const imgUrl = this.imageURL(photo);
               return (
                 <Card
@@ -101,9 +119,21 @@ class Gallery extends React.Component {
             })}
           </InfiniteScroll>
         }
+        {imagesGallery.isLoading &&
+          <FullWidthWrapper>
+            <Loader />
+          </FullWidthWrapper>
+        }
+        {!imagesGallery.isLoading && typeof (images) !== 'undefined' && images.length === 0 &&
+          <Text type="p1">No images in this gallery :(</Text>
+        }
       </React.Fragment>
     );
   }
 }
 
-export default Gallery;
+const mapStateToProps = state => ({
+  imagesGallery: state.imagesGallery,
+});
+
+export default connect(mapStateToProps)(Gallery);

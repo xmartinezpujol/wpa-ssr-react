@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
 
-import cve from './Global/cve';
+import imagesGallery from './Gallery/imagesGallery';
 
 const rootReducer = combineReducers({
-  cve,
+  imagesGallery,
   form: formReducer,
 });
 
