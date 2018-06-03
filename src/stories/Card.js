@@ -59,20 +59,34 @@ const ViewAdapter = glamorous(View)({
 });
 
 storiesOf('Cards', module).addDecorator(withKnobs)
-  .add('img + text', () => (
-    <Card
-      cover={text('Cover', 'https://upload.wikimedia.org/wikipedia/commons/1/1e/Indiandishes.jpg')}
-      color="white"
-      onClick={action('clicked')}
-      clickable={boolean('Clickable', false)}
-      zoom={boolean('Zoom', false)}
-      dimensions={dimensions}
-      imgHeight={imgHeights}
-    >
-      <Text type="h2">{text('Title', 'Curry')}</Text>
-      <Text type="p1">{text('Text', 'Curry (/ˈkʌri/, sometimes /ˈkɜːri/, plural curries) is an umbrella term referring to a number of dishes originating in the cuisine of the Indian subcontinent. .')}</Text>
-    </Card>
-  ))
+  .add('img + text',
+    withInfo(`
+      <p>Card that shows an image with text.</p>
+      
+      ##### Required Props
+
+      <p>
+        <li><strong>color</strong> : color for the card</li>
+        <li><strong>cover</strong> : image background</li>
+        <li><strong>zoom</strong> : enable for a zoom effect on image hover</li>
+        <li><strong>imgHeight</strong> : height of the image</li>
+        <li><strong>dimensions</strong> : width & height of the card + breakpoints</li>
+      </p>
+    `)(() => (
+      <Card
+        cover={text('Cover', 'https://upload.wikimedia.org/wikipedia/commons/1/1e/Indiandishes.jpg')}
+        color="white"
+        onClick={action('clicked')}
+        clickable={boolean('Clickable', false)}
+        zoom={boolean('Zoom', false)}
+        dimensions={dimensions}
+        imgHeight={imgHeights}
+      >
+        <Text type="h2">{text('Title', 'Curry')}</Text>
+        <Text type="p1">{text('Text', 'Curry (/ˈkʌri/, sometimes /ˈkɜːri/, plural curries) is an umbrella term referring to a number of dishes originating in the cuisine of the Indian subcontinent. .')}</Text>
+      </Card>
+    )),
+  )
   .add('img', () => (
     <ViewAdapter container>
       <Card

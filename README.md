@@ -1,11 +1,11 @@
-# Image Gallery REST API - ReactJS, Redux, NodeJS, Express
+# Infinite Image Gallery REST API - ReactJS, Redux, NodeJS, Express
 
 ### Client / Server localhost
 Node/NPM required to install dependencies.
 
 Clone rep
 ``` shell
-git clone https://github.com/xmartinezpujol/simple-restapi.git
+git clone https://github.com/xmartinezpujol/wpa-ssr-react.git
 ```
 
 Install dependencies
@@ -13,14 +13,9 @@ Install dependencies
 npm install
 ```
 
-Run Server (API) at http://localhost:8080
+Run Client + API at http://localhost:8080
 ``` shell
 npm run api
-```
-
-Run Client (ReactJS App) at http://localhost:3000
-``` shell
-npm run start:dev
 ```
 
 Run Storybook (UI Explorer) at http://localhost:6006
@@ -36,14 +31,6 @@ npm run build-storybook
 Make Production Bundle
 ``` shell
 npm run prod
-```
-
-
-### API URLs
-
-Direct link to image file
-```
-http://localhost:8080/oriental/sushi.jpg
 ```
 
 ### Testing
@@ -62,7 +49,7 @@ npm run test
 
 * Sentry is enabled to track errors on development phase, add another integretion on production to track real-time error data.
 
-### Dev steps
+### Workflow
 
 1) Dev/Prod environtment setup.
 2) Design and structure of the components layout (cont vs pres), wireframes, etc.
@@ -98,6 +85,10 @@ npm run test
 * Build process needs a bit more work. Dev environtment could be run also in Docker.
 
 * ARIA
+
+* Stateless components and simple Stateful ones could be isolated in a global UI package to reuse it as a dependency, also for other projects. That way we can develop with a shared library of components. 
+
+* Add documentation of the different components in Storybook with the addon-info tab (See info button). I leave Card Component as an example.
 
 ### Tech Stack
 ReactJS, Redux, Storybook, NodeJS, Express, Webpack4, Jest, Enzyme, Cypress.
