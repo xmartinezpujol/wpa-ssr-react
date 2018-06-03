@@ -3,6 +3,8 @@
 ### Client / Server localhost
 Node/NPM required to install dependencies.
 
+![Infinite Image Gallery SSR](/assets/img/wpa-ssr-react.jpg?raw=true "Infinite Image Gallery SSR")
+
 Clone rep
 ``` shell
 git clone https://github.com/xmartinezpujol/wpa-ssr-react.git
