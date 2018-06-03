@@ -15,7 +15,7 @@ npm install
 
 Run Client + API at http://localhost:8080
 ``` shell
-npm run api
+npm run start:dev
 ```
 
 Run Storybook (UI Explorer) at http://localhost:6006
@@ -30,7 +30,7 @@ npm run build-storybook
 
 Make Production Bundle
 ``` shell
-npm run prod
+npm run build:prod
 ```
 
 ### Testing
