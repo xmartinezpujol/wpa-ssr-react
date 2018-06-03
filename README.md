@@ -3,7 +3,7 @@
 ### Client / Server localhost
 Node/NPM required to install dependencies.
 
-![Infinite Image Gallery SSR](/assets/img/wpa-ssr-react.jpg?raw=true "Infinite Image Gallery SSR")
+![Infinite Image Gallery SSR](/assets/img/wpa-ssr-react.JPG?raw=true "Infinite Image Gallery SSR")
 
 Clone rep
 ``` shell
