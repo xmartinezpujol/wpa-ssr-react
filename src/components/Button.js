@@ -89,12 +89,10 @@ const ButtonBox = glamorous.button(
     padding: '0 22px',
     WebkitTapHighlightColor: 'rgba(255, 255, 255, 0)',
     ':hover:enabled': {
-      opacity: 0.8,
       boxShadow: '0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08)',
     },
     ':focus': {
       outline: 0,
-      opacity: 1,
     },
     ':disabled': {
       opacity: 0.5,

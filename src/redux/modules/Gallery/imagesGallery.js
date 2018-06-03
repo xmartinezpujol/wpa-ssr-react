@@ -1,6 +1,6 @@
 // Actions
 const LOAD_PHOTOS = 'app/gallery/images/FETCH';
-const RESET_PHOTOS = 'app/gallery/images/SET';
+const RESET_PHOTOS = 'app/gallery/images/RESET';
 
 const initialState = {
   photos: [],

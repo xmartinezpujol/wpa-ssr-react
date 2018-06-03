@@ -1,4 +1,4 @@
-# Infinite Image Gallery REST API - ReactJS, Redux, NodeJS, Express
+# Infinite Image Gallery SSR - ReactJS, Redux, NodeJS, Express
 
 ### Client / Server localhost
 Node/NPM required to install dependencies.
@@ -89,6 +89,10 @@ npm run test
 * Stateless components and simple Stateful ones could be isolated in a global UI package to reuse it as a dependency, also for other projects. That way we can develop with a shared library of components. 
 
 * Add documentation of the different components in Storybook with the addon-info tab (See info button). I leave Card Component as an example.
+
+* Add a Loader on each async image load (seeing the scrollbar grow is not enough).
+
+* Flexbox probably will need some fixing for the older IE versions.
 
 ### Tech Stack
 ReactJS, Redux, Storybook, NodeJS, Express, Webpack4, Jest, Enzyme, Cypress.

@@ -180,6 +180,7 @@ const Text = (props) => {
       color: '#36424A',
       fontWeight: 300,
       whiteSpace: 'pre-line',
+      margin: '5px 0',
     },
   };
   let propOrDefault = '';

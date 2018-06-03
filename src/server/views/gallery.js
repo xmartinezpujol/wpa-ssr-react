@@ -23,7 +23,6 @@ export default () => (`
     <html>
       <head>
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-      <style>${css}</style>
       <style>
         * {
             box-sizing: border-box
@@ -35,6 +34,7 @@ export default () => (`
             font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif !important;
         }
       </style>
+      <style>${css}</style>
       </head>
       <body>
         <div id="app">${html}</div>
