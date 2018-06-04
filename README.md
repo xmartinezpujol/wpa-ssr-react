@@ -51,6 +51,20 @@ npm run test
 
 * Sentry is enabled to track errors on development phase, add another integretion on production to track real-time error data.
 
+
+### API endpoints
+
+Image data: 
+
+http://localhost:8080/v1/image/:id
+http://localhost:8080/v1/image/42512520581
+
+Interesting photos list:
+
+http://localhost:8080/v1/gallery/images/:page
+http://localhost:8080/v1/gallery/images/1
+
+
 ### Workflow
 
 1) Dev/Prod environtment setup.
@@ -74,6 +88,14 @@ npm run test
 
 * Storybook is used for component development, following the Component Driven Design (CDD) mindset. Snapshots and UI testing could be added there also. This is a common ground with designers also to improve the companies visual Styleguide and use it as a UI Explorer.
 
+## Pending
+
+* E2E tests with Cypress.io
+
+* More test coverage, some components, services and server code don't have any tests. I gave some examples of Unit/Integration/Snapshot testing, but more of them are needed to gain stability confidence.
+
+* CSS/HTML improvements. Maybe a more gallery styled solution should be done, I used Cards because I like the concept. Also some navigation between previous/next photos could be done in the image detail.
+
 ## Refactoring / Improvements
 
 * Lists should be virtualized, if I had more time I would use collections/masonry from react-virtualized to load images for better performance.
@@ -81,6 +103,8 @@ npm run test
 * Cover error cases, API failed req, Flickr API, etc. Track errors + log + show user info.
 
 * Bundles could be splitted using Webpack's code-splitter (chunks).
+
+* SEO could be improved with react-helmet.
 
 * Image loading for the last column, something odd seems to happen when you scroll faster. Also for Image loads I recommend techniques like these ones: https://images.guide/ (blurring, preload, etc)
 
