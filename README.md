@@ -13,6 +13,7 @@ git clone https://github.com/xmartinezpujol/wpa-ssr-react.git
 Install dependencies
 ``` shell
 npm install
+```
 
 First time development
 ``` shell
