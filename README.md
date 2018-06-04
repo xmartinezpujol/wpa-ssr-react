@@ -13,6 +13,11 @@ git clone https://github.com/xmartinezpujol/wpa-ssr-react.git
 Install dependencies
 ``` shell
 npm install
+
+First time development
+``` shell
+npm run build:prod
+npm run start:dev 
 ```
 
 Run Client + API at http://localhost:8080
